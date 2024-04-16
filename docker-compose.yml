@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    env_file:
+      - farm.env
+    command: bash -c "
+      uvicorn app.main:app
+      --host 0.0.0.0 --port 8080
+      --lifespan=on --use-colors --loop uvloop --http httptools
+      --reload --log-level debug
+      --log-config ./logger_uvicorn.ini
+      "
+    volumes:
+      - ./app:/home/code/app
+      - ./tests:/home/code/tests
+      - ./alembic:/home/code/alembic
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    volumes:
+      - postgis_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=farm
+      - POSTGRES_PASSWORD=apple
+      - POSTGRES_DB=farm
+    healthcheck:
+      test:
+        [
+            "CMD-SHELL", "pg_isready -d farm -U farm"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgis_data: {}
