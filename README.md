@@ -47,9 +47,16 @@ powerfulness and speed
 of [asyncpg](https://github.com/MagicStack/asyncpg) there is [FastAPI](https://fastapi.tiangolo.com/) (modern, fast (
 high-performance),
 web framework for building APIs with Python 3.8+ based on standard Python type hints.) already reviewed
-on [thoughtworks](https://www.thoughtworks.com/radar/languages-and-frameworks?blipid=202104087) and noted in
-Python Developers [Survey 2022 Results](https://lp.jetbrains.com/python-developers-survey-2022/#FrameworksLibraries)
-as the fifth official annual Python Developers Survey, conducted as a collaborative effort between the Python Software
+on [thoughtworks](https://www.thoughtworks.com/) at Technology Radar April 2021 as Trial (new and promising technology) 
+with comments: _"We're seeing more teams adopting Python as the preferred language to build solutions,
+not just for data science but for back-end services too. In these scenarios,
+we're having good experiences with FastAPI — a modern, fast (high-performance),
+web framework for building APIs with Python 3.6 or later.
+\Additionally, this framework and its ecosystem include features such as API documentation using OpenAPI
+that allow our teams to focus on the business functionalities and quickly create REST APIs, which makes FastAPI a good alternative to existing solutions in this space."_
+
+FastAPI is also recognized by Python Developers [Survey 2022 Results](https://lp.jetbrains.com/python-developers-survey-2022/#FrameworksLibraries)
+in the fifth official annual Python Developers Survey, conducted as a collaborative effort between the Python Software
 Foundation and JetBrains: _"FastAPI has added 4 percentage points since last year and now is used by 1 in 4 Python developers."_
 
 ### Built With
