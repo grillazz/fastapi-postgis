@@ -38,7 +38,7 @@
 Example of [FastAPI](https://fastapi.tiangolo.com/) integration supported by
 almighty [Pydantic 2.0](https://github.com/pydantic/pydantic)
 with [SQLAlchemy ORM](https://www.sqlalchemy.org/) and [PostGIS16](https://postgis.net/) extension for PostgreSQL.
-All parts connected via fastest Database Client Library for python/asyncio [asyncpg](https://github.com/MagicStack/asyncpg) in event loop.
+All parts connected via Database Client Library for python/asyncio [asyncpg](https://github.com/MagicStack/asyncpg) in event loop.
 PostGIS extends the capabilities of the PostgreSQL relational database by adding support for storing, indexing, and querying geospatial data.
 
 
@@ -51,8 +51,8 @@ on [thoughtworks](https://www.thoughtworks.com/) at Technology Radar April 2021 
 with comments: _"We're seeing more teams adopting Python as the preferred language to build solutions,
 not just for data science but for back-end services too. In these scenarios,
 we're having good experiences with FastAPI — a modern, fast (high-performance),
-web framework for building APIs with Python 3.6 or later.
-\Additionally, this framework and its ecosystem include features such as API documentation using OpenAPI
+web framework for building APIs with Python 3.6 or later. 
+Additionally, this framework and its ecosystem include features such as API documentation using OpenAPI
 that allow our teams to focus on the business functionalities and quickly create REST APIs, which makes FastAPI a good alternative to existing solutions in this space."_
 
 FastAPI is also recognized by Python Developers [Survey 2022 Results](https://lp.jetbrains.com/python-developers-survey-2022/#FrameworksLibraries)
@@ -106,7 +106,9 @@ Hope you enjoy it.
 Use this space to list resources you find helpful and would like to give credit to.
 I've included a few of my favorites to kick things off!
 
-
+*[GeoAlchemy 2 provides extensions to SQLAlchemy for working with spatial databases.](https://geoalchemy-2.readthedocs.io/en/stable/)
+*[PostGIS is a spatial database extender for PostgreSQL object-relational database.](https://postgis.net/)
+*[geojson_pydantic provides a suite of Pydantic models matching the GeoJSON specification rfc7946. ](https://developmentseed.org/geojson-pydantic/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
