@@ -37,8 +37,10 @@
 
 Example of [FastAPI](https://fastapi.tiangolo.com/) integration supported by
 almighty [Pydantic 2.0](https://github.com/pydantic/pydantic)
-with [SQLAlchemy ORM](https://www.sqlalchemy.org/) and PostGIS16
-connected via fastest Database Client Library for python/asyncio [asyncpg](https://github.com/MagicStack/asyncpg).
+with [SQLAlchemy ORM](https://www.sqlalchemy.org/) and [PostGIS16](https://postgis.net/) extension for PostgreSQL.
+All parts connected via fastest Database Client Library for python/asyncio [asyncpg](https://github.com/MagicStack/asyncpg) in event loop.
+PostGIS extends the capabilities of the PostgreSQL relational database by adding support for storing, indexing, and querying geospatial data.
+
 
 Beside of using latest and greatest version of [SQLAlchemy](https://www.sqlalchemy.org/) with it robustness,
 powerfulness and speed
