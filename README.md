@@ -82,6 +82,42 @@ To build , run and test and more ... use magic of make help to play with this pr
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### How to feed database
+
+It took me a while to find nice data set. Hope works of Shakespeare as example will be able to cover 
+first part with read only declarative base configuration and all type of funny selects :)
+Data set is coming form https://github.com/catherinedevlin/opensourceshakespeare
+Next models were generated with https://github.com/agronholm/sqlacodegen
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Rainbow logs with rich :rainbow:
+
+To deliver better user(developer) experience when watching logs with tons of information
+from few emitters (which are really needy on development stage) project is using [rich](https://github.com/Textualize/rich) library.
+Event with [rich](https://github.com/Textualize/rich) superpowers reading logs is not easy.
+Found [rich](https://github.com/Textualize/rich) really nice - 
+but it took time to learn how to integrate it as logger object properly and keep it as singleton.
+
+To address below needs: 
+- it is hard to find what I am looking for even with glasses on.
+- don’t want to hire ELK to be able to use logs. 
+- want to move fast enough with debugging.
+
+Below steps were done to integrate [rich](https://github.com/Textualize/rich) into project.
+1. Configure emitters with [config.ini](https://github.com/grillazz/fastapi-postgis/blob/main/config.ini)
+2. Eliminate duplicates i.e. sqlalchemy echo by separate handlers
+3. Keep logger as singleton pattern to avoid multiple instances
+4. add uvicorn parameter --log-config config.ini
+
+![sample-logs-with-rich](/static/logz.png)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Setup User Auth
+
+Setup user authentication with JWT and Redis as token storage.
+
 ### Local development with poetry
 
 ```shell
@@ -91,6 +127,14 @@ pyenv install 3.12 && pyenv local 3.12
 poetry install
 ```
 Hope you enjoy it.
+
+### Import xlsx files with polars and calamine
+Power of Polars Library in data manipulation and analysis.
+It uses the polars library to read the Excel data into a DataFrame by passing the bytes to the `pl.read_excel()` function -
+https://docs.pola.rs/py-polars/html/reference/api/polars.read_excel.html
+In `pl.read_excel()` “calamine” engine can be used for reading all major types of Excel Workbook (.xlsx, .xlsb, .xls) and is dramatically faster than the other options, using the fastexcel module to bind calamine.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Acknowledgments
 Use this space to list resources you find helpful and would like to give credit to.
@@ -106,6 +150,19 @@ I've included a few of my favorites to kick things off!
 
 ## Change Log
 - **[long time ago...]** it was a long time ago in galaxy far far away...
+- **[JUN 4 2022]** alembic migrations added to project
+- **[JUN 6 2022]** initial dataset for shakespeare models
+- **[OCT 3 2022]** poetry added to project
+- **[NOV 12 2022]** ruff implemented to project as linting tool
+- **[FEB 14 2023]** bump project to Python 3.11
+- **[APR 10 2023]** implement logging with rich
+- **[APR 28 2023]** Rainbow logs with rich :rainbow:
+- **[JUL 7 2023]** migrate to pydantic 2.0 :fast_forward:
+- **[JUL 25 2023]** add user authentication with JWT and Redis as token storage :lock: :key:
+- **[SEP 2 2023]** add passlib and bcrypt for password hashing :lock: :key:
+- **[OCT 21 2023]** refactor shakespeare models to use sqlalchemy 2.0 :fast_forward:
+- **[FEB 1 2024]** bump project to Python 3.12 :fast_forward:
+- **[MAR 15 2024]** add polars and calamine to project :heart_eyes_cat:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
