@@ -106,9 +106,9 @@ Hope you enjoy it.
 Use this space to list resources you find helpful and would like to give credit to.
 I've included a few of my favorites to kick things off!
 
-*[GeoAlchemy 2 provides extensions to SQLAlchemy for working with spatial databases.](https://geoalchemy-2.readthedocs.io/en/stable/)
-*[PostGIS is a spatial database extender for PostgreSQL object-relational database.](https://postgis.net/)
-*[geojson_pydantic provides a suite of Pydantic models matching the GeoJSON specification rfc7946. ](https://developmentseed.org/geojson-pydantic/)
+* [GeoAlchemy 2 provides extensions to SQLAlchemy for working with spatial databases.](https://geoalchemy-2.readthedocs.io/en/stable/)
+* [PostGIS is a spatial database extender for PostgreSQL object-relational database.](https://postgis.net/)
+* [geojson_pydantic provides a suite of Pydantic models matching the GeoJSON specification rfc7946. ](https://developmentseed.org/geojson-pydantic/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
