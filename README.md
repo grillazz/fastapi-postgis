@@ -46,9 +46,9 @@ of [asyncpg](https://github.com/MagicStack/asyncpg) there is [FastAPI](https://f
 high-performance),
 web framework for building APIs with Python 3.8+ based on standard Python type hints.) already reviewed
 on [thoughtworks](https://www.thoughtworks.com/radar/languages-and-frameworks?blipid=202104087) and noted in
-Python Developers [Survey 2021 Results](https://lp.jetbrains.com/python-developers-survey-2021/#FrameworksLibraries)
+Python Developers [Survey 2022 Results](https://lp.jetbrains.com/python-developers-survey-2022/#FrameworksLibraries)
 as the fifth official annual Python Developers Survey, conducted as a collaborative effort between the Python Software
-Foundation and JetBrains.
+Foundation and JetBrains: "FastAPI has added 4 percentage points since last year and now is used by 1 in 4 Python developers."
 
 ### Built With
 
