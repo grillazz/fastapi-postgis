@@ -22,6 +22,7 @@ rich = "^13.7.0"
 sqlalchemy-json = "^0.7.0"
 geoalchemy2 = {version = "^0.14.7", extras = ["shapely"]}
 geojson-pydantic = "^1.0.2"
+psycopg = {extras = ["binary", "pool"], version = "^3.1.18"}
 
 [build-system]
 requires = ["poetry-core"]
