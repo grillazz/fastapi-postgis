@@ -17,6 +17,7 @@ def include_name(name, type_, parent_names):
     else:
         return True
 
+
 def do_run_migrations(connection):
     context.configure(
         compare_type=True,
@@ -43,9 +44,7 @@ async def run_migrations_online():
     and associate a connection with the context.
 
     """
-    connectable = create_async_engine(
-        settings.sql_url.unicode_string(), future=True
-    )
+    connectable = create_async_engine(settings.sql_url.unicode_string(), future=True)
 
     async with connectable.connect() as connection:
         await connection.run_sync(do_run_migrations)

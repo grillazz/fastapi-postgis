@@ -31,24 +31,24 @@ class FarmField(Base):
     )
     coordinates = Column(Geometry("POLYGON", srid=4326), nullable=False)
 
-    datetime_created: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=datetime.now())
-    datetime_modified: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=datetime.now(),
-                                                        onupdate=datetime.now())
+    datetime_created: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=datetime.now()
+    )
+    datetime_modified: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=datetime.now(), onupdate=datetime.now()
+    )
     name: Mapped[Optional[str]]
     description: Mapped[Optional[str]]
 
     @classmethod
     async def get_farm_fields(
-            cls, database_session: AsyncSession, where_conditions: list[Any]
+        cls, database_session: AsyncSession, where_conditions: list[Any]
     ):
-        _stmt = (
-            select(
-                cls,
-                ST_Area(cls.coordinates, True).label("area"),
-                ST_Perimeter(cls.coordinates, True).label("perimeter"),
-                ST_AsGeoJSON(cls.coordinates).label("geojson_coordinates"),
-            )
-            .where(*where_conditions)
-        )
+        _stmt = select(
+            cls,
+            ST_Area(cls.coordinates, True).label("area"),
+            ST_Perimeter(cls.coordinates, True).label("perimeter"),
+            ST_AsGeoJSON(cls.coordinates).label("geojson_coordinates"),
+        ).where(*where_conditions)
         _result = await database_session.execute(_stmt)
         return _result.fetchall()
