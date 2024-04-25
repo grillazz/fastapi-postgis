@@ -26,6 +26,7 @@ psycopg = {extras = ["binary", "pool"], version = "^3.1.18"}
 inline-snapshot = "^0.8.1"
 dirty-equals = "^0.7.1.post0"
 polyfactory = "^2.15.0"
+alembic = "^1.13.1"
 
 [build-system]
 requires = ["poetry-core"]

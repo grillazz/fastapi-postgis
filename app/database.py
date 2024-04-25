@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 from app.config import settings as global_settings
 
 engine = create_async_engine(
-    global_settings.asyncpg_url.unicode_string(),
+    global_settings.sql_url.unicode_string(),
     future=True,
     echo=False,
 )
