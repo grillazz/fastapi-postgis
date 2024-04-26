@@ -1,6 +1,4 @@
-import os
-
-from pydantic import PostgresDsn, RedisDsn, computed_field
+from pydantic import PostgresDsn, computed_field
 from pydantic_core import MultiHostUrl
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -19,7 +17,7 @@ class Settings(BaseSettings):
     @property
     def sql_url(self) -> PostgresDsn:
         return MultiHostUrl.build(
-            scheme="postgresql+asyncpg",
+            scheme="postgresql+psycopg",
             username=self.SQL_USER,
             password=self.SQL_PASSWORD,
             host=self.SQL_HOST,
