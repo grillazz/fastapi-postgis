@@ -22,7 +22,7 @@ from app.models.base import Base
 
 class FarmField(Base):
     __tablename__ = "farm_field"
-    __table_args__ = ({"schema": "coffe"},)
+    __table_args__ = ({"schema": "coffee"},)
     uuid = Column(
         UUID(as_uuid=True),
         unique=True,

@@ -14,3 +14,13 @@ docker-up:	## Run project with compose
 docker-alembic-create:  ## Create new alembic database migration aka database revision.
 	docker-compose up -d db | true
 	docker-compose run --no-deps app alembic revision --autogenerate -m "$(msg)"
+
+.PHONY: docker-alembic-migrate
+docker-alembic-migrate: ## apply alembic migrations to database/schema
+	docker-compose run --rm app alembic upgrade head
+
+.PHONY: docker-clean
+docker-clean: ## Clean Reset project containers and volumes with compose
+	docker-compose down -v --remove-orphans | true
+	docker-compose rm -f | true
+	docker volume rm postgis_data | true

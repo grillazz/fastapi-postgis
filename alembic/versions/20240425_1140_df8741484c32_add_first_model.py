@@ -40,14 +40,14 @@ def upgrade():
         sa.Column("description", sa.String(), nullable=True),
         sa.PrimaryKeyConstraint("uuid"),
         sa.UniqueConstraint("uuid"),
-        schema="coffe",
+        schema="coffee",
     )
     op.create_geospatial_index(
         "idx_farm_field_coordinates",
         "farm_field",
         ["coordinates"],
         unique=False,
-        schema="coffe",
+        schema="coffee",
         postgresql_using="gist",
         postgresql_ops={},
     )
@@ -59,9 +59,9 @@ def downgrade():
     op.drop_geospatial_index(
         "idx_farm_field_coordinates",
         table_name="farm_field",
-        schema="coffe",
+        schema="coffee",
         postgresql_using="gist",
         column_name="coordinates",
     )
-    op.drop_geospatial_table("farm_field", schema="coffe")
+    op.drop_geospatial_table("farm_field", schema="coffee")
     # ### end Alembic commands ###
