@@ -24,5 +24,8 @@ class Settings(BaseSettings):
             path=self.SQL_DB,
         )
 
+    def get_conn_str(self):
+        return f"dbname={self.SQL_DB} user={self.SQL_USER} password={self.SQL_PASSWORD} host={self.SQL_HOST} port=5432"
+
 
 settings = Settings()

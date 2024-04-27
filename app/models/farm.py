@@ -42,7 +42,7 @@ class FarmField(Base):
 
     @classmethod
     async def get_farm_fields(
-        cls, database_session: AsyncSession, where_conditions: list[Any]
+        cls, database_session: AsyncSession, where_conditions: list[Any], compile_sql: bool = False
     ):
         _stmt = select(
             cls,
@@ -50,5 +50,9 @@ class FarmField(Base):
             ST_Perimeter(cls.coordinates, True).label("perimeter"),
             ST_AsGeoJSON(cls.coordinates).label("geojson_coordinates"),
         ).where(*where_conditions)
+
+        if compile_sql:
+            return _stmt.compile(compile_kwargs={"literal_binds": True})
+
         _result = await database_session.execute(_stmt)
         return _result.fetchall()
