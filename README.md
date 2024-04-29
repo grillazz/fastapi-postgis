@@ -63,7 +63,7 @@ with a 4 percentage point increase from the previous year.
 [![SQLAlchemy][sqlalchemy.org]][sqlalchemy-url]
 [![Uvicorn][uvicorn.org]][uvicorn-url]
 [![pytest][pytest.org]][pytest-url]
-[![asyncpg][asyncpg.github.io]][asyncpg-url]
+[![psycopg][psycopg.org]][psycopg-url]
 [![alembic][alembic.sqlalchemy.org]][alembic-url]
 [![rich][rich.readthedocs.io]][rich-url]
 
@@ -80,8 +80,7 @@ To build , run and test and more ... use magic of make help to play with this pr
 ```shell
 1. make docker-build
 2. make docker-up
-3. make docker-apply-db-migrations
-4. make docker-feed-db
+3. make docker-alembic-migrate
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -143,15 +142,15 @@ I've included a few of my favorites to kick things off!
 
 [linkedin-url]: https://www.linkedin.com/in/python-has-powers/
 
-[fastapi.tiangolo.com]: https://img.shields.io/badge/FastAPI-0.110.0-009485?style=for-the-badge&logo=fastapi&logoColor=white
+[fastapi.tiangolo.com]: https://img.shields.io/badge/FastAPI-0.110.1-009485?style=for-the-badge&logo=fastapi&logoColor=white
 
 [fastapi-url]: https://fastapi.tiangolo.com/
 
-[pydantic.com]: https://img.shields.io/badge/Pydantic-2.6.4-e92063?style=for-the-badge&logo=pydantic&logoColor=white
+[pydantic.com]: https://img.shields.io/badge/Pydantic-2.7.0-e92063?style=for-the-badge&logo=pydantic&logoColor=white
 
 [pydantic-url]: https://docs.pydantic.dev/latest/
 
-[sqlalchemy.org]: https://img.shields.io/badge/SQLAlchemy-2.0.28-bb0000?color=bb0000&style=for-the-badge
+[sqlalchemy.org]: https://img.shields.io/badge/SQLAlchemy-2.0.29-bb0000?color=bb0000&style=for-the-badge
 
 [sqlalchemy-url]: https://docs.sqlalchemy.org/en/20/
 
@@ -159,9 +158,9 @@ I've included a few of my favorites to kick things off!
 
 [uvicorn-url]: https://www.uvicorn.org/
 
-[asyncpg.github.io]: https://img.shields.io/badge/asyncpg-0.29.0-2e6fce?style=for-the-badge&logo=postgresql&logoColor=white
+[psycopg.org]: https://img.shields.io/badge/psycopg-3.1.18-2e6fce?style=for-the-badge&logo=postgresql&logoColor=white
 
-[asyncpg-url]: https://magicstack.github.io/asyncpg/current/
+[psycopg-url]: https://www.psycopg.org/psycopg3/docs/
 
 [pytest.org]: https://img.shields.io/badge/pytest-8.1.1-fff?style=for-the-badge&logo=pytest&logoColor=white
 
@@ -175,6 +174,3 @@ I've included a few of my favorites to kick things off!
 
 [rich-url]: https://rich.readthedocs.io/en/latest/
 
-[redis.io]: https://img.shields.io/badge/redis-5.0.3-dc382d?style=for-the-badge&logo=redis&logoColor=white
-
-[redis-url]: https://redis.io/
