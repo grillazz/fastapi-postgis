@@ -42,7 +42,10 @@ class FarmField(Base):
 
     @classmethod
     async def get_farm_fields(
-        cls, database_session: AsyncSession, where_conditions: list[Any], compile_sql: bool = False
+        cls,
+        database_session: AsyncSession,
+        where_conditions: list[Any],
+        compile_sql: bool = False,
     ):
         _stmt = select(
             cls,

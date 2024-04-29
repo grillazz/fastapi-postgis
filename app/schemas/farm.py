@@ -1,0 +1,36 @@
+from typing import Optional
+
+
+from geojson_pydantic import Polygon
+from pydantic import BaseModel, Field, ConfigDict
+
+config = ConfigDict(
+    from_attributes=True,
+    extra="ignore",
+    json_schema_extra={
+        "name": "Coffe Field 1",
+        "description": "This is a coffee field. Cultivation of bourbon grapes.",
+        "coordinates": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [28.965931011390687, 53.72790740955463],
+                    [28.028874469947816, 51.2464554789114],
+                    [32.491115404319764, 50.917482530795894],
+                    [28.965931011390687, 53.72790740955463],
+                ]
+            ],
+        },
+    },
+)
+
+
+class FarmField(BaseModel):
+    model_config = config
+    coordinates: Polygon
+    name: Optional[str] = Field(None)
+    description: Optional[str] = Field(None)
+
+
+class FarmFieldResponse(FarmField):
+    pass
