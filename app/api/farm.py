@@ -21,7 +21,7 @@ router = APIRouter(prefix="/v1/farm")
 @router.post(
     "",
     status_code=status.HTTP_201_CREATED,
-    # response_model=FarmFieldResponse,
+    response_model=FarmFieldResponse,
 )
 async def create_field(
     payload: FarmFieldSchema,
@@ -34,4 +34,4 @@ async def create_field(
     )
     await farm_field.save_and_refresh(db_session)
 
-    return True
+    return farm_field

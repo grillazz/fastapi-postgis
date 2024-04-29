@@ -1,5 +1,5 @@
 from typing import Optional
-
+from uuid import UUID
 
 from geojson_pydantic import Polygon
 from pydantic import BaseModel, Field, ConfigDict
@@ -32,5 +32,9 @@ class FarmField(BaseModel):
     description: Optional[str] = Field(None)
 
 
-class FarmFieldResponse(FarmField):
-    pass
+class FarmFieldResponse(BaseModel):
+    model_config = ConfigDict(
+        from_attributes=True,
+        extra="ignore",
+    )
+    uuid: UUID
