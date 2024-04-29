@@ -35,29 +35,26 @@
 
 ## About The Project
 
-Example of [FastAPI](https://fastapi.tiangolo.com/) integration supported by
-almighty [Pydantic 2.0](https://github.com/pydantic/pydantic)
-with [SQLAlchemy ORM](https://www.sqlalchemy.org/) and [PostGIS16](https://postgis.net/) extension for PostgreSQL.
-All parts connected via Database Client Library for python/asyncio [asyncpg](https://github.com/MagicStack/asyncpg) in event loop.
-PostGIS extends the capabilities of the PostgreSQL relational database by adding support for storing, indexing, and querying geospatial data.
+This example demonstrates the seamless integration of [FastAPI](https://fastapi.tiangolo.com/), a modern, high-performance web framework,
+with [Pydantic 2.0](https://github.com/pydantic/pydantic), a robust and powerful data validation library.
+The integration is further enhanced by the use of [SQLAlchemy ORM](https://www.sqlalchemy.org/), a popular and feature-rich Object-Relational Mapping tool,
+and [PostGIS16](https://postgis.net/), a spatial database extender for PostgreSQL that enables efficient storage, indexing, and querying of geospatial data.
+
+The entire stack is connected using the [psycopg](https://github.com/psycopg/psycopg) Database Client Library,
+which provides a robust and efficient way to interact with PostgreSQL databases in Python,
+leveraging the power of asyncio and event loops.
+
+Notably, this example showcases the latest and greatest versions of SQLAlchemy and psycopg,
+which are renowned for their robustness, power, and speed. The inclusion of FastAPI adds a modern, fast, and high-performance web framework to the mix
+allowing for the rapid development of APIs with Python 3.8+.
+
+FastAPI has received significant recognition in the industry, including a review on thoughtworks Technology Radar in April 2021,
+where it was classified as a Trial technology, with comments praising its performance, ease of use,
+and features such as API documentation using OpenAPI. Additionally, FastAPI was recognized in the Python Developers Survey 2022 Results,
+conducted by the Python Software Foundation and JetBrains, where it was reported that 1 in 4 Python developers use FastAPI,
+with a 4 percentage point increase from the previous year.
 
 
-Beside of using latest and greatest version of [SQLAlchemy](https://www.sqlalchemy.org/) with it robustness,
-powerfulness and speed
-of [asyncpg](https://github.com/MagicStack/asyncpg) there is [FastAPI](https://fastapi.tiangolo.com/) (modern, fast (
-high-performance),
-web framework for building APIs with Python 3.8+ based on standard Python type hints.) already reviewed
-on [thoughtworks](https://www.thoughtworks.com/) at Technology Radar April 2021 as Trial (new and promising technology) 
-with comments: _"We're seeing more teams adopting Python as the preferred language to build solutions,
-not just for data science but for back-end services too. In these scenarios,
-we're having good experiences with FastAPI — a modern, fast (high-performance),
-web framework for building APIs with Python 3.6 or later. 
-Additionally, this framework and its ecosystem include features such as API documentation using OpenAPI
-that allow our teams to focus on the business functionalities and quickly create REST APIs, which makes FastAPI a good alternative to existing solutions in this space."_
-
-FastAPI is also recognized by Python Developers [Survey 2022 Results](https://lp.jetbrains.com/python-developers-survey-2022/#FrameworksLibraries)
-in the fifth official annual Python Developers Survey, conducted as a collaborative effort between the Python Software
-Foundation and JetBrains: _"FastAPI has added 4 percentage points since last year and now is used by 1 in 4 Python developers."_
 
 ### Built With
 
