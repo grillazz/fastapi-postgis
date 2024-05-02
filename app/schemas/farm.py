@@ -8,21 +8,38 @@ config = ConfigDict(
     from_attributes=True,
     extra="ignore",
     json_schema_extra={
-        "name": "Coffe Field 1",
-        "description": "This is a coffee field. Cultivation of bourbon grapes.",
-        "coordinates": {
-            "type": "Polygon",
-            "coordinates": [
-                [
-                    [28.965931011390687, 53.72790740955463],
-                    [28.028874469947816, 51.2464554789114],
-                    [32.491115404319764, 50.917482530795894],
-                    [28.965931011390687, 53.72790740955463],
-                ]
-            ],
-        },
+        "examples": [
+            {
+                "name": "Coffe Field 1",
+                "description": "This is a coffee field. Cultivation of bourbon grapes.",
+                "coordinates": {
+                    "type": "Polygon",
+                    "coordinates": [
+                        [
+                            [28.965931011390687, 53.72790740955463],
+                            [28.028874469947816, 51.2464554789114],
+                            [32.491115404319764, 50.917482530795894],
+                            [28.965931011390687, 53.72790740955463],
+                        ]
+                    ],
+                },
+            }
+        ]
     },
 )
+
+model_config = {
+    "json_schema_extra": {
+        "examples": [
+            {
+                "name": "Foo",
+                "description": "A very nice Item",
+                "price": 35.4,
+                "tax": 3.2,
+            }
+        ]
+    }
+}
 
 
 class FarmField(BaseModel):
@@ -45,4 +62,3 @@ class FarmFieldResponse(BaseModel):
     area: Optional[float]
     perimeter: Optional[float]
     geojson_coordinates: Optional[str]
-

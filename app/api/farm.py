@@ -22,6 +22,7 @@ router = APIRouter(prefix="/v1/farm")
 
 logger = AppLogger().get_logger()
 
+
 @router.post(
     "",
     status_code=status.HTTP_201_CREATED,
@@ -40,6 +41,7 @@ async def create_field(
 
     return farm_field
 
+
 @router.get(
     "/{uuid}",
     response_model=FarmFieldResponse,
@@ -49,7 +51,9 @@ async def get_field(
     request: Request,
 ):
 
-    _sql = await FarmField.get_farm_fields(where_conditions=[FarmField.uuid == uuid], compile_sql=True)
+    _sql = await FarmField.get_farm_fields(
+        where_conditions=[FarmField.uuid == uuid], compile_sql=True
+    )
 
     async with request.app.async_pool.connection() as conn:
         async with conn.cursor(row_factory=psycopg.rows.dict_row) as cur:
@@ -66,4 +70,3 @@ async def get_field(
             except Exception as e:
                 logger.DEBUG(f"Error: {e}")
                 return {"error": f"Error: {e}"}
-
