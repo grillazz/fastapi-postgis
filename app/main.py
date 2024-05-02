@@ -29,4 +29,4 @@ app.include_router(farm_router)
 # TODO print raw sql from sqlalchemy orm and pass it to ppsycopg_pool
 # https://medium.com/@benshearlaw/asynchronous-postgres-with-python-fastapi-and-psycopg-3-fafa5faa2c08
 # TODO: add decorator to get RAW SQL from current complex ORM query
-# TODO: analyze codebase describe implementation details for project
+# TODO: analyze codebase describe implementation details for project and make blog post from it

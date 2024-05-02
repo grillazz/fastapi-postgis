@@ -38,3 +38,11 @@ class FarmFieldResponse(BaseModel):
         extra="ignore",
     )
     uuid: UUID
+    name: Optional[str]
+    description: Optional[str]
+    datetime_created: Optional[str]
+    datetime_modified: Optional[str]
+    area: Optional[float]
+    perimeter: Optional[float]
+    geojson_coordinates: Optional[str]
+

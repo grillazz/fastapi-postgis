@@ -43,12 +43,16 @@ class FarmField(Base):
     @classmethod
     async def get_farm_fields(
         cls,
-        database_session: AsyncSession,
         where_conditions: list[Any],
         compile_sql: bool = False,
+        database_session: Optional[AsyncSession] = None,
     ):
         _stmt = select(
-            cls,
+            cls.uuid,
+            cls.name,
+            cls.description,
+            cls.datetime_created,
+            cls.datetime_modified,
             ST_Area(cls.coordinates, True).label("area"),
             ST_Perimeter(cls.coordinates, True).label("perimeter"),
             ST_AsGeoJSON(cls.coordinates).label("geojson_coordinates"),

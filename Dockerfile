@@ -33,4 +33,4 @@ ENV PYTHONPATH=/home/code/ PYTHONHASHSEED=0
 COPY app/ app/
 COPY alembic/ alembic/
 COPY tests/ tests/
-COPY alembic.ini ./
+COPY alembic.ini config.ini ./
