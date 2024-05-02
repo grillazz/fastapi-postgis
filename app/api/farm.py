@@ -44,7 +44,7 @@ async def create_field(
 
 @router.get(
     "/{uuid}",
-    response_model=FarmFieldResponse,
+    # response_model=FarmFieldResponse,
 )
 async def get_field(
     uuid: UUID,
@@ -68,5 +68,5 @@ async def get_field(
 
                 return _result
             except Exception as e:
-                logger.DEBUG(f"Error: {e}")
+                logger.debug(f"Error: {e}")
                 return {"error": f"Error: {e}"}
