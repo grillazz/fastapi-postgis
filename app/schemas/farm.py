@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Optional
 from uuid import UUID
 
@@ -57,8 +58,8 @@ class FarmFieldResponse(BaseModel):
     uuid: UUID
     name: Optional[str]
     description: Optional[str]
-    datetime_created: Optional[str]
-    datetime_modified: Optional[str]
-    area: Optional[float]
-    perimeter: Optional[float]
-    geojson_coordinates: Optional[str]
+    datetime_created: datetime
+    datetime_modified: datetime
+    area: float
+    perimeter: float
+    geojson_coordinates: Optional[Polygon] = None

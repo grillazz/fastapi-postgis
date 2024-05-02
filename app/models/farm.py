@@ -5,6 +5,7 @@ from typing import Any, Optional
 from geoalchemy2 import Geometry, WKBElement
 from geoalchemy2.functions import ST_Area, ST_Perimeter, ST_AsGeoJSON
 from sqlalchemy import (
+    Computed,
     Column,
     String,
     DateTime,
@@ -30,6 +31,9 @@ class FarmField(Base):
         primary_key=True,
     )
     coordinates = Column(Geometry("POLYGON", srid=4326), nullable=False)
+    # TODO: add area column which will be computed with ST_Area geometry function
+    area = Column(Float, Computed(ST_Area(coordinates, True)), comment="Area in square meters")
+    perimeter = Column(Float, Computed(ST_Perimeter(coordinates, True)), comment="Perimeter in meters")
 
     datetime_created: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=datetime.now()
@@ -53,8 +57,8 @@ class FarmField(Base):
             cls.description,
             cls.datetime_created,
             cls.datetime_modified,
-            ST_Area(cls.coordinates, True).label("area"),
-            ST_Perimeter(cls.coordinates, True).label("perimeter"),
+            cls.area,
+            cls.perimeter,
             ST_AsGeoJSON(cls.coordinates).label("geojson_coordinates"),
         ).where(*where_conditions)
 
