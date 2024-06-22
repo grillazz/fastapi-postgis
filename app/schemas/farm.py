@@ -3,7 +3,7 @@ from typing import Optional
 from uuid import UUID
 
 from geojson_pydantic import Polygon
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict, Json
 
 config = ConfigDict(
     from_attributes=True,
@@ -49,4 +49,4 @@ class FarmFieldResponse(BaseModel):
     datetime_modified: datetime
     area: float
     perimeter: float
-    geojson_coordinates: Optional[Polygon] = None
+    geojson_coordinates: Optional[Json[Polygon]] = None
