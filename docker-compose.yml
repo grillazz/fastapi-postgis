@@ -2,6 +2,7 @@ version: "3.9"
 
 services:
   app:
+    container_name: app
     build: .
     env_file:
       - farm.env
@@ -22,6 +23,7 @@ services:
       - db
 
   db:
+    container_name: db
     build:
       context: ./db
       dockerfile: Dockerfile
