@@ -7,24 +7,24 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-fastapi = "^0.114.0"
+fastapi = "^0.114.2"
 uvicorn = "^0.30.6"
 uvloop = "^0.20.0"
 httptools = "^0.6.1"
-sqlalchemy = "^2.0.34"
-pydantic-settings = "^2.5.0"
-pydantic = {version = "^2.9.1", extras = ["email"]}
+sqlalchemy = "^2.0.35"
+pydantic-settings = "^2.5.2"
+pydantic = {version = "^2.9.2", extras = ["email"]}
 httpx = "^0.27.2"
 pytest = "^8.3.3"
 rich = "^13.8.1"
 sqlalchemy-json = "^0.7.0"
 geoalchemy2 = {version = "^0.15.2", extras = ["shapely"]}
 geojson-pydantic = "^1.1.1"
-psycopg = {extras = ["binary", "pool"], version = "^3.2.1"}
+psycopg = {extras = ["binary", "pool"], version = "^3.2.2"}
 inline-snapshot = "^0.12.1"
 dirty-equals = "^0.8.0"
-polyfactory = "^2.16.2"
-alembic = "^1.13.2"
+polyfactory = "^2.17.0"
+alembic = "^1.13.3"
 
 [build-system]
 requires = ["poetry-core"]
