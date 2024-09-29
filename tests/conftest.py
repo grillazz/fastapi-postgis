@@ -31,10 +31,9 @@ async def start_db():
     # clean-up pooled connections
     await engine.dispose()
 
+
 @pytest.fixture(scope="session")
-async def client(
-    start_db
-) -> AsyncClient:
+async def client(start_db) -> AsyncClient:
     async with AsyncClient(
         app=app,
         base_url="http://testserver/v1",
