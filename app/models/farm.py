@@ -2,16 +2,13 @@ import uuid
 from datetime import datetime
 from typing import Any, Optional
 
-from geoalchemy2 import Geometry, WKBElement
+from geoalchemy2 import Geometry
 from geoalchemy2.functions import ST_Area, ST_Perimeter, ST_AsGeoJSON
 from sqlalchemy import (
     Computed,
     Column,
-    String,
     DateTime,
-    Boolean,
     Float,
-    ForeignKey,
     select,
 )
 from sqlalchemy.dialects.postgresql import UUID
