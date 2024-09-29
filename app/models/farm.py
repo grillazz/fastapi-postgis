@@ -32,8 +32,12 @@ class FarmField(Base):
     )
     coordinates = Column(Geometry("POLYGON", srid=4326), nullable=False)
     # TODO: add area column which will be computed with ST_Area geometry function
-    area = Column(Float, Computed(ST_Area(coordinates, True)), comment="Area in square meters")
-    perimeter = Column(Float, Computed(ST_Perimeter(coordinates, True)), comment="Perimeter in meters")
+    area = Column(
+        Float, Computed(ST_Area(coordinates, True)), comment="Area in square meters"
+    )
+    perimeter = Column(
+        Float, Computed(ST_Perimeter(coordinates, True)), comment="Perimeter in meters"
+    )
 
     datetime_created: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=datetime.now()

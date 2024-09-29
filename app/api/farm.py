@@ -1,7 +1,10 @@
 from uuid import UUID
 
 import psycopg
-from fastapi import APIRouter, Depends, Request
+from fastapi import APIRouter, Depends, Request, HTTPException
+from fastapi.exceptions import ResponseValidationError
+from pydantic import ValidationError
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
@@ -60,8 +63,17 @@ async def get_field(
 
                 logger.debug(f"SQL: {_sql}")
                 logger.debug(f"Result: {_result}")
-
-                return _result
-            except Exception as e:
-                logger.debug(f"Error: {e}")
-                return {"error": f"Error: {e}"}
+                if _result is None:
+                    raise HTTPException(
+                        status_code=status.HTTP_404_NOT_FOUND,
+                        detail={
+                            "Record not found": f"There is no record for requested name value : {uuid}"
+                        },
+                    )
+                else:
+                    return _result
+            except (SQLAlchemyError, HTTPException) as ex:
+                logger.debug(f"Error: {ex}")
+                raise HTTPException(
+                    status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=repr(ex)
+                ) from ex
