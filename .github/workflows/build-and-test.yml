@@ -18,11 +18,11 @@ jobs:
     env:
       PYTHONDONTWRITEBYTECODE: 1
       PYTHONUNBUFFERED: 1
-      POSTGRES_DB: farm
-      POSTGRES_HOST: 127.0.0.1
-      POSTGRES_USER: farm
-      POSTGRES_PASSWORD: apple
-      PGPASSWORD: apple
+      SQL_HOST: 127.0.0.1
+      SQL_PORT: 5432
+      SQL_DB: farm
+      SQL_USER: farm
+      SQL_PASSWORD: apple
 
     services:
       sqldb:
