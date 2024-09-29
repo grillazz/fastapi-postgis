@@ -2,8 +2,6 @@ from uuid import UUID
 
 import psycopg
 from fastapi import APIRouter, Depends, Request, HTTPException
-from fastapi.exceptions import ResponseValidationError
-from pydantic import ValidationError
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
 
