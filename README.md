@@ -142,27 +142,27 @@ I've included a few of my favorites to kick things off!
 
 [linkedin-url]: https://www.linkedin.com/in/python-has-powers/
 
-[fastapi.tiangolo.com]: https://img.shields.io/badge/FastAPI-0.110.1-009485?style=for-the-badge&logo=fastapi&logoColor=white
+[fastapi.tiangolo.com]: https://img.shields.io/badge/FastAPI-0.114.2-009485?style=for-the-badge&logo=fastapi&logoColor=white
 
 [fastapi-url]: https://fastapi.tiangolo.com/
 
-[pydantic.com]: https://img.shields.io/badge/Pydantic-2.7.0-e92063?style=for-the-badge&logo=pydantic&logoColor=white
+[pydantic.com]: https://img.shields.io/badge/Pydantic-2.9.2-e92063?style=for-the-badge&logo=pydantic&logoColor=white
 
 [pydantic-url]: https://docs.pydantic.dev/latest/
 
-[sqlalchemy.org]: https://img.shields.io/badge/SQLAlchemy-2.0.29-bb0000?color=bb0000&style=for-the-badge
+[sqlalchemy.org]: https://img.shields.io/badge/SQLAlchemy-2.0.35-bb0000?color=bb0000&style=for-the-badge
 
 [sqlalchemy-url]: https://docs.sqlalchemy.org/en/20/
 
-[uvicorn.org]: https://img.shields.io/badge/Uvicorn-0.29.0-2094f3?style=for-the-badge&logo=uvicorn&logoColor=white
+[uvicorn.org]: https://img.shields.io/badge/Uvicorn-0.30.6-2094f3?style=for-the-badge&logo=uvicorn&logoColor=white
 
 [uvicorn-url]: https://www.uvicorn.org/
 
-[psycopg.org]: https://img.shields.io/badge/psycopg-3.1.18-2e6fce?style=for-the-badge&logo=postgresql&logoColor=white
+[psycopg.org]: https://img.shields.io/badge/psycopg-3.2.2-2e6fce?style=for-the-badge&logo=postgresql&logoColor=white
 
 [psycopg-url]: https://www.psycopg.org/psycopg3/docs/
 
-[pytest.org]: https://img.shields.io/badge/pytest-8.1.1-fff?style=for-the-badge&logo=pytest&logoColor=white
+[pytest.org]: https://img.shields.io/badge/pytest-8.3.3-fff?style=for-the-badge&logo=pytest&logoColor=white
 
 [pytest-url]: https://docs.pytest.org/en/6.2.x/
 
@@ -170,7 +170,7 @@ I've included a few of my favorites to kick things off!
 
 [alembic-url]: https://alembic.sqlalchemy.org/en/latest/
 
-[rich.readthedocs.io]: https://img.shields.io/badge/rich-13.7.1-009485?style=for-the-badge&logo=rich&logoColor=white
+[rich.readthedocs.io]: https://img.shields.io/badge/rich-13.8.1-009485?style=for-the-badge&logo=rich&logoColor=white
 
 [rich-url]: https://rich.readthedocs.io/en/latest/
 

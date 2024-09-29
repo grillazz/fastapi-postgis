@@ -21,7 +21,7 @@ async def lifespan(app: FastAPI):
         await app.async_pool.close()
 
 
-app = FastAPI(title="Farm API", version="0.0.1", lifespan=lifespan)
+app = FastAPI(title="Farm API", version="0.0.3", lifespan=lifespan)
 
 app.include_router(farm_router)
 
